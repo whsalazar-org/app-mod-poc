@@ -1,0 +1,97 @@
+<div class="active-call-panel" style="padding:0;">
+
+    <!-- Panel header -->
+    <div class="cc-panel-header"
+         style="background:#1a3a5c; color:#fff; padding:8px 12px; display:flex; align-items:center; justify-content:space-between;">
+        <span style="font-weight:bold; font-size:13px;">&#128222; Active Call</span>
+        <!-- Call timer -->
+        <span data-dojo-attach-point="callTimerNode"
+              style="font-family:monospace; font-size:16px; color:#4fc3f7; letter-spacing:2px;">
+            00:00
+        </span>
+    </div>
+
+    <!-- Idle state — shown when no call is active -->
+    <div data-dojo-attach-point="idleMessageNode"
+         style="padding:32px; text-align:center; color:#999; font-style:italic;">
+        No active call. Answer a call from the queue to begin.
+    </div>
+
+    <!-- Active call details — hidden until a call is loaded -->
+    <div data-dojo-attach-point="callDetailsNode" style="display:none; padding:12px;">
+
+        <!-- Caller info row -->
+        <!-- LEGACY: Table layout for form-like content -->
+        <table style="width:100%; border-collapse:collapse; margin-bottom:10px;">
+            <tbody>
+                <tr>
+                    <td style="width:50%; vertical-align:top; padding-right:8px;">
+                        <div style="font-size:11px; color:#888; margin-bottom:2px;">Caller</div>
+                        <div data-dojo-attach-point="callerNameNode"
+                             style="font-size:15px; font-weight:bold; color:#333;">
+                            &mdash;
+                        </div>
+                        <div data-dojo-attach-point="callerPhoneNode"
+                             style="font-size:13px; color:#666; margin-top:2px;">
+                            &mdash;
+                        </div>
+                    </td>
+                    <td style="width:50%; vertical-align:top;">
+                        <div style="font-size:11px; color:#888; margin-bottom:2px;">Call ID / Status</div>
+                        <div data-dojo-attach-point="callIdNode"
+                             style="font-size:13px; color:#555;">
+                            &mdash;
+                        </div>
+                        <div data-dojo-attach-point="callStatusNode"
+                             style="font-size:12px; color:#4caf50; font-weight:bold;">
+                            &mdash;
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Customer info box -->
+        <div style="background:#f0f4f8; border:1px solid #d0dce8; border-radius:4px;
+                    padding:8px 10px; margin-bottom:10px; font-size:12px; line-height:1.6;">
+            <div style="font-size:11px; font-weight:bold; color:#1a3a5c; margin-bottom:4px;">Customer Info</div>
+            <div data-dojo-attach-point="customerInfoNode">
+                <em style="color:#999;">Looking up customer&hellip;</em>
+            </div>
+        </div>
+
+        <!-- Action buttons -->
+        <div style="margin-bottom:10px; display:flex; gap:6px;">
+            <button data-dojo-attach-event="onclick:_onHoldCall"
+                    class="cc-btn"
+                    style="flex:1; padding:6px; background:#ff9800; color:#fff; border:none; border-radius:3px; cursor:pointer; font-size:12px;">
+                &#9646;&#9646; Hold
+            </button>
+            <button data-dojo-attach-event="onclick:_onTransferCall"
+                    class="cc-btn"
+                    style="flex:1; padding:6px; background:#2196f3; color:#fff; border:none; border-radius:3px; cursor:pointer; font-size:12px;">
+                &#8644; Transfer
+            </button>
+            <button data-dojo-attach-event="onclick:_onEndCall"
+                    class="cc-btn cc-btn-danger"
+                    style="flex:1; padding:6px; background:#f44336; color:#fff; border:none; border-radius:3px; cursor:pointer; font-size:12px;">
+                &#9586; End Call
+            </button>
+        </div>
+
+        <!-- Disposition and notes form -->
+        <div style="border-top:1px solid #eee; padding-top:10px;">
+            <div style="margin-bottom:6px;">
+                <label style="font-size:11px; color:#666; display:block; margin-bottom:4px;">
+                    Disposition <span style="color:#f44336;">*</span>
+                </label>
+                <span data-dojo-attach-point="dispositionSelectNode"></span>
+            </div>
+            <div>
+                <label style="font-size:11px; color:#666; display:block; margin-bottom:4px;">Notes</label>
+                <span data-dojo-attach-point="notesNode"></span>
+            </div>
+        </div>
+
+    </div>
+</div>

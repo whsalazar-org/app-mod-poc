@@ -1,0 +1,23 @@
+<!-- NotificationBar template -->
+<!-- LEGACY: Inline styles and raw HTML alert bar — no Angular Material component -->
+<!-- TODO: Replace with Angular Material MatSnackBar or a notification service -->
+<div class="cc-notification-bar"
+     style="display:none; padding:8px 16px; display:flex; align-items:center;
+            justify-content:space-between; font-size:13px; border-bottom:1px solid transparent;">
+
+    <div style="display:flex; align-items:center; gap:8px;">
+        <span data-dojo-attach-point="messageIconNode"
+              style="font-size:16px; font-weight:bold;">
+        </span>
+        <span data-dojo-attach-point="messageTextNode"></span>
+    </div>
+
+    <!-- Dismiss button -->
+    <button data-dojo-attach-event="onclick:hideMessage"
+            style="background:transparent; border:none; font-size:16px; cursor:pointer;
+                   color:inherit; opacity:0.7; padding:0 4px; line-height:1;"
+            title="Dismiss">
+        &times;
+    </button>
+
+</div>

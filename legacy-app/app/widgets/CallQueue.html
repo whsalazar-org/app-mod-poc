@@ -1,0 +1,49 @@
+<div class="call-queue-panel" style="padding:0;">
+
+    <!-- Panel header -->
+    <div class="cc-panel-header"
+         style="background:#1a3a5c; color:#fff; padding:8px 12px; display:flex; align-items:center; justify-content:space-between;">
+        <span style="font-weight:bold; font-size:13px;">&#9742; Call Queue</span>
+        <!-- Queue count badge -->
+        <span data-dojo-attach-point="queueCountNode"
+              style="display:inline-block; min-width:20px; height:20px; line-height:20px;
+                     border-radius:10px; background:#4caf50; color:#fff;
+                     text-align:center; font-size:11px; font-weight:bold; padding:0 4px;">
+            0
+        </span>
+    </div>
+
+    <!-- Queue table -->
+    <!-- LEGACY: Table layout for data — no Angular Material Table (mat-table) -->
+    <div style="overflow-y:auto; max-height:calc(100vh - 120px);">
+        <table style="width:100%; border-collapse:collapse; font-size:12px;">
+            <thead>
+                <tr style="background:#f0f4f8; border-bottom:1px solid #ddd;">
+                    <th style="padding:6px 8px; text-align:left; font-weight:600; color:#555;">Caller</th>
+                    <th style="padding:6px 4px; text-align:left; font-weight:600; color:#555;">Phone</th>
+                    <th style="padding:6px 4px; text-align:left; font-weight:600; color:#555;">Skill</th>
+                    <th style="padding:6px 4px; text-align:left; font-weight:600; color:#555;">Action</th>
+                </tr>
+            </thead>
+            <!-- Rows are built dynamically in CallQueue.js _addRow() -->
+            <tbody data-dojo-attach-point="queueBodyNode">
+                <tr>
+                    <td colspan="4" style="text-align:center; padding:16px; color:#999;">
+                        <em>Loading queue&hellip;</em>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- LEGACY: Inline style refresh button — no Angular Material Button -->
+    <div style="padding:8px; border-top:1px solid #eee; text-align:right;">
+        <button data-dojo-attach-point="refreshBtnNode"
+                data-dojo-attach-event="onclick:refresh"
+                class="cc-btn"
+                style="font-size:11px; padding:2px 8px; color:#555; background:#f5f5f5; border:1px solid #ccc;">
+            &#8635; Refresh
+        </button>
+    </div>
+
+</div>

@@ -1,0 +1,54 @@
+<div class="agent-panel" style="padding:12px;">
+
+    <!-- Agent avatar placeholder and name -->
+    <table style="width:100%; border-collapse:collapse; margin-bottom:10px;">
+        <tbody>
+            <tr>
+                <!-- LEGACY: Avatar as text initials in a colored box — no image component -->
+                <td style="width:48px; vertical-align:middle;">
+                    <div class="agent-avatar"
+                         style="width:42px; height:42px; border-radius:50%; background:#1a3a5c; color:#fff;
+                                display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:bold;">
+                        &#128100;
+                    </div>
+                </td>
+                <td style="vertical-align:middle; padding-left:8px;">
+                    <div data-dojo-attach-point="agentNameNode"
+                         style="font-weight:bold; font-size:14px; color:#333;">
+                        &mdash;
+                    </div>
+                    <div data-dojo-attach-point="extensionNode"
+                         style="font-size:11px; color:#888; margin-top:2px;">
+                        &mdash;
+                    </div>
+                </td>
+                <!-- Status indicator dot -->
+                <td style="width:16px; text-align:right; vertical-align:top; padding-top:4px;">
+                    <span data-dojo-attach-point="statusIndicatorNode"
+                          style="display:inline-block; width:12px; height:12px; border-radius:50%; background:#9e9e9e;"
+                          title="Status"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Status selector -->
+    <div style="margin-bottom:10px;">
+        <label style="font-size:11px; color:#666; display:block; margin-bottom:4px;">My Status:</label>
+        <!-- Dijit Select widget rendered here programmatically in postCreate -->
+        <span data-dojo-attach-point="statusSelectNode"></span>
+    </div>
+
+    <!-- Statistics panel -->
+    <div style="background:#f9f9f9; border:1px solid #e0e0e0; border-radius:4px; padding:8px; font-size:12px;">
+        <div style="margin-bottom:4px; color:#555;">
+            Calls Today:
+            <strong data-dojo-attach-point="callsHandledNode">0</strong>
+        </div>
+        <div style="color:#555;">
+            Avg Handle Time:
+            <strong data-dojo-attach-point="avgHandleTimeNode">0s</strong>
+        </div>
+    </div>
+
+</div>
