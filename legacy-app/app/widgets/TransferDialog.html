@@ -1,0 +1,42 @@
+<!-- TransferDialog content template -->
+<!-- LEGACY: Raw HTML injected as dijit/Dialog content -->
+<!-- TODO: Replace with Angular MatDialog component template -->
+<div class="transfer-dialog-content" style="padding:4px;">
+
+    <p style="margin-top:0; font-size:13px; color:#555;">
+        Select an available agent to transfer this call to.
+    </p>
+
+    <!-- Agent selector -->
+    <div style="margin-bottom:12px;">
+        <label style="display:block; font-size:12px; color:#666; margin-bottom:4px;">
+            Transfer To Agent <span style="color:#f44336;">*</span>
+        </label>
+        <!-- Dijit Select rendered here programmatically -->
+        <span data-attach="agentSelectNode" style="display:block;"></span>
+    </div>
+
+    <!-- Transfer reason -->
+    <div style="margin-bottom:16px;">
+        <label style="display:block; font-size:12px; color:#666; margin-bottom:4px;">
+            Transfer Notes
+        </label>
+        <span data-attach="reasonNode" style="display:block;"></span>
+    </div>
+
+    <!-- Action buttons -->
+    <!-- LEGACY: Inline button styles — no Angular Material button component -->
+    <div style="display:flex; justify-content:flex-end; gap:8px;">
+        <button data-attach="cancelBtn"
+                style="padding:6px 16px; background:#f5f5f5; border:1px solid #ccc;
+                       border-radius:3px; cursor:pointer; font-size:13px;">
+            Cancel
+        </button>
+        <button data-attach="confirmBtn"
+                style="padding:6px 16px; background:#2196f3; color:#fff; border:none;
+                       border-radius:3px; cursor:pointer; font-size:13px; font-weight:bold;">
+            Transfer Call
+        </button>
+    </div>
+
+</div>

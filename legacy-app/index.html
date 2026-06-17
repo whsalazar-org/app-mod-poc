@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CallCenter Pro — Legacy Dojo App</title>
+
+    <!--
+        LEGACY: Loading Dojo 1.16 from CDN.
+        TODO: Migrate to Angular CLI build pipeline.
+    -->
+    <script>
+        var dojoConfig = {
+            async: true,
+            isDebug: true,
+            baseUrl: "./",
+            packages: [
+                { name: "app", location: "app" }
+            ],
+            paths: {
+                "dojo":   "//ajax.googleapis.com/ajax/libs/dojo/1.16.3/dojo",
+                "dijit":  "//ajax.googleapis.com/ajax/libs/dojo/1.16.3/dijit",
+                "dojox":  "//ajax.googleapis.com/ajax/libs/dojo/1.16.3/dojox"
+            }
+        };
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.16.3/dojo/dojo.js"></script>
+
+    <!-- Dijit theme -->
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.16.3/dijit/themes/claro/claro.css">
+
+    <style>
+        /* LEGACY: Inline global styles — no CSS modules or Angular component styles */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            background: #f5f5f5;
+        }
+        #app-container {
+            width: 100%;
+            height: 100%;
+            min-height: 600px;
+        }
+        .loading-indicator {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body class="claro">
+
+    <!-- App placeholder — replaced by CallCenterApp widget on startup -->
+    <div id="app-container">
+        <div class="loading-indicator">Loading Call Center Pro&hellip;</div>
+    </div>
+
+    <script>
+        // LEGACY: Inline bootstrap script — AMD require to kick off the app.
+        // TODO: Replace with Angular bootstrapApplication() call.
+        require(["app/main"], function (main) {
+            // main module self-executes on load via dojo/domReady!
+            console.log("[CallCenter] Application bootstrap complete.");
+        });
+    </script>
+</body>
+</html>

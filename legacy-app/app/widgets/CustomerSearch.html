@@ -1,0 +1,21 @@
+<div class="customer-search-panel" style="padding:12px;">
+
+    <!-- Panel header -->
+    <div style="font-size:12px; font-weight:bold; color:#1a3a5c; margin-bottom:8px;">
+        &#128269; Customer Search
+    </div>
+
+    <!-- Search input -->
+    <!-- Dijit TextBox rendered here programmatically in postCreate -->
+    <div style="margin-bottom:6px;">
+        <span data-dojo-attach-point="searchInputNode" style="display:block; width:100%;"></span>
+    </div>
+
+    <!-- Search results -->
+    <!-- LEGACY: Results rendered via DOM construction, not Angular *ngFor -->
+    <div data-dojo-attach-point="resultsNode"
+         style="border:1px solid #e0e0e0; border-radius:3px; max-height:200px; overflow-y:auto; background:#fff;">
+        <!-- Populated dynamically by CustomerSearch.js _renderResults() -->
+    </div>
+
+</div>

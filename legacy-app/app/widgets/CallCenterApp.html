@@ -1,0 +1,39 @@
+<div class="callcenter-app" data-dojo-attach-point="containerNode">
+
+    <!-- Notification bar — spans full width at the top -->
+    <div data-dojo-attach-point="notificationBarNode" class="cc-notification-region"></div>
+
+    <!-- Header / toolbar -->
+    <div class="cc-header" style="background:#1a3a5c; color:#fff; padding:8px 16px; display:flex; align-items:center; justify-content:space-between;">
+        <span style="font-size:18px; font-weight:bold;">&#128222; CallCenter Pro</span>
+        <span id="cc-header-agent-name" style="font-size:13px; opacity:0.8;">Loading&hellip;</span>
+    </div>
+
+    <!-- Main layout: three-column grid using a legacy table -->
+    <!-- LEGACY: Table-based layout — no CSS Grid or Flexbox design system -->
+    <!-- TODO: Replace with Angular Material sidenav + main content layout -->
+    <table class="cc-layout-table" style="width:100%; height:calc(100vh - 40px); border-collapse:collapse; vertical-align:top;">
+        <tbody>
+            <tr>
+                <!-- Left column: Agent panel + Customer search -->
+                <td class="cc-col-left" style="width:280px; border-right:1px solid #ccc; vertical-align:top; padding:0;">
+                    <div data-dojo-attach-point="agentPanelNode" class="cc-panel"></div>
+                    <hr style="margin:0; border:none; border-top:1px solid #ddd;">
+                    <div data-dojo-attach-point="customerSearchNode" class="cc-panel"></div>
+                </td>
+
+                <!-- Center column: Active call + Call history -->
+                <td class="cc-col-center" style="vertical-align:top; padding:0;">
+                    <div data-dojo-attach-point="activeCallNode" class="cc-panel cc-active-call-panel"></div>
+                    <hr style="margin:0; border:none; border-top:1px solid #ddd;">
+                    <div data-dojo-attach-point="callHistoryNode" class="cc-panel"></div>
+                </td>
+
+                <!-- Right column: Call queue -->
+                <td class="cc-col-right" style="width:320px; border-left:1px solid #ccc; vertical-align:top; padding:0;">
+                    <div data-dojo-attach-point="callQueueNode" class="cc-panel cc-queue-panel"></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,49 @@
+<div class="call-history-panel" style="padding:0;">
+
+    <!-- Panel header -->
+    <div class="cc-panel-header"
+         style="background:#f0f4f8; border-bottom:1px solid #d0dce8; padding:8px 12px;
+                font-size:12px; font-weight:bold; color:#1a3a5c;">
+        &#128221; Call History
+    </div>
+
+    <!-- History table -->
+    <!-- LEGACY: HTML table for data display — no Angular Material Table -->
+    <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; font-size:12px;">
+            <thead>
+                <tr style="background:#f8f8f8; border-bottom:2px solid #e0e0e0;">
+                    <th style="padding:6px 8px; text-align:left; color:#555; font-weight:600;">Date/Time</th>
+                    <th style="padding:6px 4px; text-align:left; color:#555; font-weight:600;">Duration</th>
+                    <th style="padding:6px 4px; text-align:left; color:#555; font-weight:600;">Agent</th>
+                    <th style="padding:6px 4px; text-align:left; color:#555; font-weight:600;">Disposition</th>
+                    <th style="padding:6px 4px; text-align:center; color:#555; font-weight:600;">Notes</th>
+                </tr>
+            </thead>
+            <tbody data-dojo-attach-point="historyBodyNode">
+                <tr>
+                    <td colspan="5" style="text-align:center; padding:16px; color:#999; font-style:italic; font-size:12px;">
+                        Select a customer to view call history.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination controls -->
+    <div style="display:flex; align-items:center; justify-content:flex-end; padding:6px 12px;
+                border-top:1px solid #eee; font-size:11px; color:#666; gap:8px;">
+        <button data-dojo-attach-point="prevBtnNode"
+                data-dojo-attach-event="onclick:_onPrevPage"
+                style="padding:2px 8px; font-size:11px;" disabled="disabled">
+            &laquo; Prev
+        </button>
+        <span data-dojo-attach-point="pageInfoNode">Page 1 of 1</span>
+        <button data-dojo-attach-point="nextBtnNode"
+                data-dojo-attach-event="onclick:_onNextPage"
+                style="padding:2px 8px; font-size:11px;" disabled="disabled">
+            Next &raquo;
+        </button>
+    </div>
+
+</div>
